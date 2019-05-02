@@ -18,16 +18,16 @@
             <div class="alert">
                 <p>
                     <span class="close">&times;</span>
-                    <strong>Success!</strong> You are ready to start flipping tables!
+                    <strong>Success!</strong> You are ready to start throwing looks and flipping tables!
                 </p>
             </div>
         {% endif %}
         <div class="wrapper">
             <header>
                 <h1>{{ project.name_full }} <small>{{ project.version }}</small></h1>
-                <p style="margin-bottom:0">Flip some tables on <a href="https://slack.com/">Slack</a>.</p>
+                <p style="margin-bottom:0">Flip some tables and throw some looks on <a href="https://slack.com/">Slack</a>.</p>
                 <p><img src="{{ url_for('static', filename='img/tableflip.png') }}" border="0" alt="{{ project.name_full }}" /></p>
-                <p class="view"><a href="{{ project.github_url }}">View the Project on GitHub <small>ErinMorelli/em-slack-tableflip</small></a></p>
+                <p class="view"><a href="{{ project.github_url }}">View the Project on GitHub</a></p>
                 <ul>
                     <li><a href="{{ project.github_url }}/zipball/master">Download <strong>ZIP File</strong></a></li>
                     <li><a href="{{ project.github_url }}/tarball/master">Download <strong>TAR Ball</strong></a></li>
@@ -136,7 +136,8 @@
 
             </section>
             <footer>
-                <p>This project is maintained by <a href="http://github.com/ErinMorelli">Erin Morelli</a></p>
+                <p>This project is maintained by <a href="{{ project.github_url }}">{{ project.author }}</a></p>
+                <p>This was forked from <a href="{{ project.original_github_url }}">{{ project.original_author }}</a></p>
                 <p><small>Theme by <a href="https://github.com/orderedlist">orderedlist</a><br />&copy; {{ project.copyright }}</small></p>
             </footer>
         </div>
@@ -149,7 +150,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-77960869-2', 'auto');
+            ga('create', '{{ project.analytics_id }}', 'auto');
             ga('require', 'linkid');
             ga('send', 'pageview');
         </script>

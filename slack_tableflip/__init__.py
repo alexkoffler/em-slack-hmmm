@@ -36,7 +36,7 @@ __module__ = "slack_tableflip.{0}".format(__file__)
 def set_project_info():
     """Set project information from setup tools installation."""
     # CUSTOMIZE THIS VALUE FOR YOUR OWN INSTALLATION
-    base_url = 'https://slack-tableflip.herokuapp.com'
+    base_url = 'https://slack-hmmm.herokuapp.com'
 
     # Get app info from the dist
     app_name = 'slack_tableflip'
@@ -44,11 +44,15 @@ def set_project_info():
 
     return {
         'name': app_name,
-        'name_full': 'EM Slack Tableflip',
-        'author_url': 'http://www.erinmorelli.com',
-        'github_url': 'https://github.com/ErinMorelli/em-slack-tableflip',
-        'version': '1.9',
-        'version_int': 1.9,
+        'name_full': 'EM Slack Hmmm and Tableflip',
+        'original_author_url': 'Erin Morelli',
+        'author_url': 'http://www.alexkoffler.com',
+        'original_author_url': 'http://www.erinmorelli.com',
+        'github_url': 'https://github.com/alexkoffler/em-slack-hmmm',
+        'original_github_url': 'https://github.com/ErinMorelli/em-slack-tableflip',
+        'analytics_id': 'UA-139496299-1',
+        'version': '1.9.1',
+        'version_int': 1.9.1,
         'package_path': provider.module_path,
         'copyright': '2015-{0}'.format(str(date.today().year)),
         'client_secret': os.environ['SLACK_CLIENT_SECRET'],
@@ -77,6 +81,7 @@ TEMPLATE_DIR = os.path.join(PROJECT_INFO['package_path'], 'templates')
 
 # Allowed slash commands
 ALLOWED_COMMANDS = [
+    '/hmmm',
     '/flip',
     '/fliptable',
     '/tableflip',
@@ -90,6 +95,7 @@ ALLOWED_COMMANDS = [
 #   http://emojicons.com/table-flipping
 #   http://tableflipping.com/
 ALLOWED_TYPES = {
+    'hmmm': "ಠ_ಠ",
     'adorable': "(づ｡◕‿‿◕｡)づ ︵ ┻━┻",
     'battle': "(╯°□°)╯︵ ┻━┻ ︵ ╯(°□° ╯)",
     'bear': "ʕノ•ᴥ•ʔノ ︵ ┻━┻",
@@ -272,7 +278,7 @@ def report_event(name, event):
 
 # Initialize flask app
 APP = Flask(
-    'em-slack-tableflip',
+    'em-slack-hmmm',
     template_folder=TEMPLATE_DIR,
     static_folder=TEMPLATE_DIR
 )

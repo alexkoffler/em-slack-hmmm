@@ -36,14 +36,17 @@ def gen_data_files(*dirs):
 
 # Set up slack_tableflip package
 setup(
-    name='em-slack-tableflip',
-    version='1.9',
-    author='Erin Morelli',
-    author_email='erin@erinmorelli.com',
-    url='http://slack-tableflip.herokuapp.com',
+    name='em-slack-hmmm',
+    version='1.9.1',
+    original_author='Erin Morelli',
+    original_author_email='erin@erinmorelli.com',
+    original_author_url='http://slack-hmmm.herokuapp.com',
+    author='Alex Koffler',
+    author_email='alex@alexkoffler.com',
+    url='http://slack-hmmm.herokuapp.com',
     license='MIT',
     platforms='Linux, OSX',
-    description='Flip some tables on Slack.',
+    description='Give skeptical eyes and flip some tables on Slack.',
     long_description=open('README.md').read(),
 
     packages=[
