@@ -37,10 +37,10 @@ def gen_data_files(*dirs):
 # Set up slack_tableflip package
 setup(
     name='em-slack-hmmm',
-    version='1.9.1',
-    original_author='Erin Morelli',
-    original_author_email='erin@erinmorelli.com',
-    original_author_url='http://slack-hmmm.herokuapp.com',
+    version='1.10',
+    #original_author='Erin Morelli',
+    #original_author_email='erin@erinmorelli.com',
+    #original_author_url='http://slack-hmmm.herokuapp.com',
     author='Alex Koffler',
     author_email='alex@alexkoffler.com',
     url='http://slack-hmmm.herokuapp.com',
