@@ -1,4 +1,4 @@
-# [EM Slack Tableflip](https://slack-tableflip.herokuapp.com)
+# [EM Slack Hmmm](https://slack-hmmm.herokuapp.com)
 Flip some tables on [Slack](https://slack.com).
 
 Built using emojis from [here](http://www.emoticonfun.org/flip/), [here](http://emojicons.com/table-flipping), and [here](http://tableflipping.com/).
@@ -6,7 +6,7 @@ Built using emojis from [here](http://www.emoticonfun.org/flip/), [here](http://
 ----------
 ## Quick Setup
 
-[Click here](https://slack-tableflip.herokuapp.com/teams) for quick setup with Slack.
+[Click here](https://slack-hmmm.herokuapp.com/teams) for quick setup with Slack.
 
 View available commands and options [here](#usage).
 
@@ -31,7 +31,7 @@ View available commands and options [here](#usage).
 
 3. Set the **URL** field to:
 
-    > [https://slack-tableflip.herokuapp.com](https://slack-tableflip.herokuapp.com)
+    > [https://slack-hmmm.herokuapp.com](https://slack-hmmm.herokuapp.com)
 
 4. Set the **Method** option to `POST`
 
@@ -67,6 +67,9 @@ Use command `/tableflip help` to view this usage information from within Slack.
 **Note**:** The `word` input is optional and will display the flip with the provided word. Not all flip types can do word flips. Without a word, the flip will display the standard table.
 
 Available flip types:
+
+    /hmmm
+        ಠ_ಠ
 
     /tableflip
         (╯°□°)╯︵ ┻━┻
