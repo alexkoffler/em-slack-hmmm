@@ -1,5 +1,5 @@
 # [EM Slack Hmmm](https://slack-hmmm.herokuapp.com)
-Flip some tables on [Slack](https://slack.com).
+Flip some tables and throw some looks on [Slack](https://slack.com).
 
 Built using emojis from [here](http://www.emoticonfun.org/flip/), [here](http://emojicons.com/table-flipping), and [here](http://tableflipping.com/).
 
