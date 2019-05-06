@@ -57,6 +57,7 @@ def set_project_info():
         'copyright': '2015-{0}'.format(str(date.today().year)),
         'client_secret': os.environ['SLACK_CLIENT_SECRET'],
         'client_id': os.environ['SLACK_CLIENT_ID'],
+        'debug': os.environ['DEBUG'],
         'base_url': base_url,
         'oauth_url': 'https://slack.com/oauth/authorize',
         'auth_url': '{0}/authenticate'.format(base_url),
@@ -137,6 +138,7 @@ ALLOWED_TYPES = {
 
 # Allowed restore flip types
 RESTORE_TYPES = {
+    'hmmm': "ಠ_ಠ {0}",
     'chill': "{0} ノ( ◕◡◕ ノ)",
     'relax': "{0} ノ( º _ ºノ)",
     'whoops': "{0} ¯\_(ツ)"

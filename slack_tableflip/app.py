@@ -15,6 +15,7 @@ The above copyright notice and this permission notice shall be
 included in all copies or substantial portions of the Software.
 """
 
+from sys import stderr
 from flask import redirect, render_template, request
 import slack_tableflip.auth as auth
 import slack_tableflip.flipper as flipper
@@ -23,7 +24,7 @@ from slack_tableflip import (APP, PROJECT_INFO, ALLOWED_TYPES, ALL_WORD_TYPES,
 
 
 @APP.route('/', methods=['GET', 'POST'])
-def home():
+def home():    
     """Render app homepage template."""
     if request.method == 'POST':
         report_event('post_request', request.form.to_dict())
@@ -37,6 +38,15 @@ def home():
         allowed_commands=ALLOWED_COMMANDS
     )
 
+@APP.route('/hmmm', methods=['POST'])
+def hmmm():
+    report_event('post_request', request.form.to_dict())
+    if PROJECT_INFO['debug']:
+        print ("************", file=stderr)
+        print (request, file=stderr)
+        print ("************", file=stderr)
+
+    return flipper.flip(request.form.to_dict())
 
 @APP.route('/authenticate')
 def authenticate():

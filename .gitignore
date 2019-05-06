@@ -5,6 +5,7 @@
 *._*
 *.egg-info/
 .eggs/
+.env
 test.*
 build/
 dist/

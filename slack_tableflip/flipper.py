@@ -20,7 +20,7 @@ import argparse
 from slacker import Auth, Chat, Error
 import slack_tableflip as stf
 from slack_tableflip.storage import Users
-
+from sys import stderr
 
 # Set globals
 ERRORS = []
@@ -48,12 +48,14 @@ class FlipParser(argparse.ArgumentParser):
         global COMMAND
 
         if req_type == 'help':
-            help_msg = "*{app_name}* can flip all kinds of tables for you!\n"
+            help_msg = "*{app_name}* can shoot all kinds of looks and flip all kinds of tables for you!\n"
             help_msg += "Here are some examples:\n\n"
-            help_msg += "`{command}`\n\tFlips a classic table\n\n"
-            help_msg += "`{command} relax`\n\tPuts a table back\n\n"
-            help_msg += "`{command} word table`\n\tFlips the word 'table'\n\n"
-            help_msg += "`{command} relax table`\n\t"
+            help_msg += "`/hmmm`\n\tShoots a skeptical look\n\n"
+            help_msg += "`/flip`\n\tFlips a classic table\n\n"
+            help_msg += "`/flip`\n\tFlips a classic table\n\n"
+            help_msg += "`/flip relax`\n\tPuts a table back\n\n"
+            help_msg += "`/flip word table`\n\tFlips the word 'table'\n\n"
+            help_msg += "`/flip relax table`\n\t"
             help_msg += "Puts the word 'table' back\n\n"
             help_msg += "`{command} list`\n\tLists available flip types\n\n"
             help_msg += "`{command} help`\n\tShows this message\n"
@@ -279,6 +281,14 @@ def send_flip(token, table, args):
 
 def flip(args):
     """Run flip functions."""
+    
+    # debugging
+    if stf.PROJECT_INFO['debug']:
+        print ("************", file=stderr)
+        print (args, file=stderr)
+        print ("************", file=stderr)
+    
+    
     # Reset global error tracker
     global ERRORS
     ERRORS = []
@@ -310,7 +320,12 @@ def flip(args):
 
     else:
         # Set up text args for parser
-        text_args = args['text'].split()
+        if COMMAND == "/hmmm":
+            flip_type = 'hmmm'
+            hmmm = "hmmm " + args['text']
+            text_args = hmmm.split()    
+        else:
+            text_args = args['text'].split()    
 
         # Get parser
         parser = get_parser()
@@ -328,6 +343,9 @@ def flip(args):
         # Set values
         flip_type = result.flip_type
         flip_word = result.flip_word
+
+    if COMMAND == "/hmmm":
+        flip_type = 'hmmm'
 
     # Get requested flip
     table = do_flip(flip_type, flip_word)
